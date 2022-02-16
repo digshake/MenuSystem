@@ -1,5 +1,10 @@
 package menu;
 
+/**
+ * A bean that represents an item on a menu
+ * @author Doug Shook
+ *
+ */
 public class MenuItem {
 	
 	private double price;
