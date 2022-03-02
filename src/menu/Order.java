@@ -41,4 +41,8 @@ public class Order {
 	public double computeTax() {
 		return computeSubtotal() * this.taxRate;
 	}
+	
+	public double computeGrandTotal() {
+		return computeSubtotal() + computeTax();
+	}
 }

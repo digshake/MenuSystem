@@ -75,12 +75,39 @@ class OrderTest {
 		assertEquals(0.60, computedTax, 0.05);
 	}
 	
+	@Test
 	void testComputeTaxEmptyOrder() {
 		
 		double computedTax = o.computeTax();
 		
 		assertEquals(0, computedTax, 0.05);
 	}
+	
+	@Test
+	void testComputeGrandTotal() {
+		
+		//setup
+		Order o = new Order(0.05);
+		MenuItem bagel = new MenuItem(5.00, "bagel");
+		o.addItem(bagel);
+		
+		//call the method being tested
+		double grandTotal = o.computeGrandTotal();
+		
+		assertEquals(5.25, grandTotal, 0.0005);
+	}
+	
+	@Test
+	void testGrandTotalEmptyOrder() {
+		//setup
+		Order o = new Order(0.05);
+		
+		//call the method being tested
+		double grandTotal = o.computeGrandTotal();
+		
+		assertEquals(0, grandTotal, 0.0005);
+	}
+	
 
 	
 }
